@@ -29,6 +29,8 @@ import haxe.CallStack;
 import haxe.io.Path;
 #end
 
+import backend.SUtil;
+
 #if linux
 @:cppInclude('./external/gamemode_client.h')
 @:cppFileCode('
@@ -60,6 +62,10 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+
+		#if android
+		SUtil.gameCrashCheck();
+		#end
 
 		// Credits to MAJigsaw77 (he's the og author for this code)
 		#if android
@@ -101,6 +107,10 @@ class Main extends Sprite
 			game.width = Math.ceil(stageWidth / game.zoom);
 			game.height = Math.ceil(stageHeight / game.zoom);
 		}
+
+		#if android
+		SUtil.doTheCheck();
+		#end
 
 			
 		#if LUA_ALLOWED Lua.set_callbacks_function(cpp.Callable.fromStaticFunction(psychlua.CallbackHandler.call)); #end
