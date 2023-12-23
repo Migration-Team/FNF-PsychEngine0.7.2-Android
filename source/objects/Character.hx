@@ -297,7 +297,7 @@ class Character extends FlxSprite
 	{
 		var name:String = '';
 		@:privateAccess
-		if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name : atlas.anim.play;
+		if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name;
 		return (name != null) ? name : '';
 	}
 
