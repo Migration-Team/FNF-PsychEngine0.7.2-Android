@@ -70,7 +70,7 @@ jobs:
           haxelib git linc_luajit https://github.com/Sirox228/linc_luajit.git
           haxelib install hscript
           haxelib install SScript
-          haxelib git extension-androidtools https://github.com/pwp114514/extension-androidtools
+          haxelib git extension-androidtools https://github.com/pwp114514/extension-androidtools.git
           haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate
           haxelib install hxcpp-debug-server
