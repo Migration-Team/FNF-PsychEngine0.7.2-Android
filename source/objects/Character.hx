@@ -296,8 +296,9 @@ class Character extends FlxSprite
 	inline public function getAnimationName():String
 	{
 		var name:String = '';
+		var obj:Dynamic = PlayState.instance.variables.get(tag);
 		@:privateAccess
-		if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name;
+		if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name : obj.anim.lastPlayedAnim;
 		return (name != null) ? name : '';
 	}
 
