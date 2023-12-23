@@ -1,5 +1,9 @@
 package;
 
+#if android
+import android.content.Context;
+#end
+	
 import debug.FPSCounter;
 
 import flixel.graphics.FlxGraphic;
@@ -56,6 +60,13 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+
+		
+		#if android
+		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
+		#elseif ios
+		Sys.setCwd(LimeSystem.applicationStorageDirectory);
+		#end
 
 		
 		if (stage != null)
