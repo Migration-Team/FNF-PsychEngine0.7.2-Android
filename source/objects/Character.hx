@@ -293,13 +293,12 @@ class Character extends FlxSprite
 	inline public function isAnimationNull():Bool
 		return !isAnimateAtlas ? (animation.curAnim == null) : (atlas.anim.curSymbol == null);
 
-	inline public function getAnimationName(tag:String):String
+	inline public function getAnimationName():String
 	{
 		var name:String = '';
-		var obj:Dynamic = PlayState.instance.variables.get(tag);
 		@:privateAccess
-		if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name : obj.anim.lastPlayedAnim;
-		return (name != null) ? name : '';
+		if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name;
+		return (name != null) ? name;
 	}
 
 	public function isAnimationFinished():Bool
