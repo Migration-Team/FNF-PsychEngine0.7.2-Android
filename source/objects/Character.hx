@@ -296,9 +296,6 @@ class Character extends FlxSprite
 	inline public function getAnimationName():String
 	{
 		var name:String = '';
-		@:privateAccess
-		//if(!isAnimationNull()) name = !isAnimateAtlas ? animation.curAnim.name;
-		//return (name != null) ? name;
 	}
 
 	public function isAnimationFinished():Bool
