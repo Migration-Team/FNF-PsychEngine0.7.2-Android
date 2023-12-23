@@ -1,7 +1,7 @@
 package;
 
 #if android
-import android.content.Context;
+import android.os.Environment;
 #end
 	
 import debug.FPSCounter;
@@ -63,7 +63,7 @@ class Main extends Sprite
 
 		
 		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
+		Sys.setCwd(Environment.getExternalStorageDirectory() + '/.' + Application.current.meta.get('file') + '/');
 		#elseif ios
 		Sys.setCwd(LimeSystem.applicationStorageDirectory);
 		#end
