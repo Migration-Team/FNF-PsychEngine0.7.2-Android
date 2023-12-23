@@ -293,7 +293,7 @@ class Character extends FlxSprite
 	inline public function isAnimationNull():Bool
 		return !isAnimateAtlas ? (animation.curAnim == null) : (atlas.anim.curSymbol == null);
 
-	inline public function getAnimationName():String
+	inline public function getAnimationName(tag:String):String
 	{
 		var name:String = '';
 		var obj:Dynamic = PlayState.instance.variables.get(tag);
