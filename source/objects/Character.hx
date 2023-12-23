@@ -296,7 +296,7 @@ class Character extends FlxSprite
 	inline public function getAnimationName():String
 	{
 		var name:String = 'best';
-		return (name != null) ? name;
+		return name;
 	}
 
 	public function isAnimationFinished():Bool
