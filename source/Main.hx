@@ -1,9 +1,5 @@
 package;
 
-#if android
-import android.content.Context;
-#end
-
 import debug.FPSCounter;
 
 import flixel.graphics.FlxGraphic;
@@ -63,17 +59,8 @@ class Main extends Sprite
 	{
 		super();
 
-		#if android
 		SUtil.gameCrashCheck();
-		#end
-
-		// Credits to MAJigsaw77 (he's the og author for this code)
-		#if android
-		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
-		#elseif ios
-		Sys.setCwd(lime.system.System.applicationStorageDirectory);
-		#end
-
+		
 		if (stage != null)
 		{
 			init();
@@ -108,9 +95,7 @@ class Main extends Sprite
 			game.height = Math.ceil(stageHeight / game.zoom);
 		}
 
-		#if android
 		SUtil.doTheCheck();
-		#end
 
 			
 		#if LUA_ALLOWED Lua.set_callbacks_function(cpp.Callable.fromStaticFunction(psychlua.CallbackHandler.call)); #end
